@@ -1,0 +1,210 @@
+body{
+    margin:0;
+    width:100%;
+}
+.header{
+    background-color: #3399cc;
+    padding:25px;
+}
+.mainHeading{
+    font-family: 'Century Gothic';
+    color:#ffffff;
+    font-weight: 100;
+    margin: 0px;
+    font-size: 53px;
+}
+.navigationBar{
+    background-color: #333333;
+    display: flex;
+    text-align: center;
+    padding: 0px;
+    justify-content: space-between;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+.navItem{
+    padding:8px 12px 4px 15px;
+    border-width: 0px 0px 0px 5px;
+    border-style: solid;
+    border-color: #333333;
+    color: white;
+}
+.navItem:hover{
+    background-color: #f89502;
+    border-color: white;
+    color: black;
+    cursor: pointer;
+    font-weight: bolder;
+}
+.navigate{
+    color: inherit;
+    font-family: Ebrima;
+    font-size: 18px;
+    font-weight:bolder;
+    text-decoration: none;
+}
+.activePage{
+    background-color: #f89502;
+    border-color: white;
+    color: black;
+    font-weight: bolder;
+}
+.icon{
+    margin: 8px 28px 8px 0px;
+}
+.contact{
+    font-family: Ebrima;
+    font-size: 18px;
+    font-weight:bolder;
+    text-shadow: 0px 0px 0.8px;
+    margin-bottom: 20px;
+}
+h1{
+    margin: 0px;
+    font-weight: lighter;
+}
+p{
+    margin: 0px ;
+}
+pre{
+    margin: 0px;
+    font-family: 'Leelawadee UI';
+}
+.contactSummary{
+    width: 420px;
+}
+.eachContactSummary{
+    border-width: 0.5px;
+    border-color: #d0d0d0;
+    border-style: solid;
+    padding: 5px 10px;
+}
+.eachContactSummary:hover{
+    background-color: #cee7f2;
+    cursor: pointer;
+}
+.contacts{
+    display: flex;
+    padding: 20px;
+    font-family:'Leelawadee UI';
+    color: rgb(83, 83, 83);
+    text-shadow: 0px 0px 1px;
+}
+.editSymbol{
+    width: 15px;
+    height: 15px;
+    margin: auto;
+}
+.deleteSymbol{
+    width: 20px;
+    height: 25px;
+    margin: auto;
+}
+.contactInfo{
+    margin: 20px 90px;
+    width: 540px;
+    display: none;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+.Name{
+    font-weight:lighter;
+}
+.active{
+    background-color: #cee7f2;
+}
+.modify{
+    display: flex;
+}
+.modify:hover{
+    cursor: pointer;
+}
+.modifyBar{
+    width:170px;
+    display: flex;
+    justify-content: space-between;
+}
+.nameBar{
+    display: flex;
+    justify-content: space-between;
+}
+.center{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+}
+.sameline{
+    display: flex;
+    font-size: 17px;
+}
+.btn{
+    margin-left: 5px;
+}
+.content{
+    margin-top: 15px;
+}
+#detailedName{
+    font-weight: normal;
+}
+.addForm{
+    width: 750px;
+    height: 590px;
+    margin: 20px 65px;
+    box-shadow: 0px 0px 25px;
+    padding: 5px;
+    display: none;
+}
+input{
+    height: 45px;
+    border-color:#919191;
+    border-width: 2px;
+    font-size: 20px;
+    border-style: solid;
+    width: 100%;
+}
+table{
+    padding-top: 20px;
+}
+td{
+    width: 275px;
+    padding-left: 20px;
+}
+.full{
+    height: 100%;
+}
+.rightSpace{
+    width: 125px;
+    padding-right: 25px;
+    padding-left: 0px;
+}
+.address{
+    height: 110px;
+}
+.addbtn{
+    height: 40px;
+    background-color: #468c00;
+    border-width: 0px;
+    color: white;
+    font-size: 18px;
+    margin: 0px;
+}
+.addbtn:hover{
+    cursor: pointer;
+}
+textarea{
+    height: 45px;
+    border-color:#919191;
+    border-width: 2px;
+    font-size: 20px;
+    border-style: solid;
+    width: 100%;
+    resize: none;
+}
+.error{
+    font-size: 12px;
+    color: red;
+}
