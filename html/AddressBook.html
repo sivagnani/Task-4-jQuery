@@ -13,7 +13,7 @@
         <nav class="navigationBar">
             <div class="nav">
                 <div class="navItem  activePage"><a class="navigate">HOME</a></div>
-                <div class="navItem" onclick="openForm()"><a class="navigate">+ADD</a></div>
+                <div class="navItem" id="add"><a class="navigate">+ADD</a></div>
             </div>
             <div><img src="../media/blog-icon.png" class="icon"></div>
         </nav>
@@ -26,11 +26,11 @@
                     <h1 id="detailedName"></h1>
                     <div class="center">
                     <div class="modifyBar">
-                        <div class="modify" onclick="editDetails()">
+                        <div class="modify" id="edit">
                             <img class="editSymbol" src="../media/edit1.jpg">
                             <a class="btn">EDIT</a>
                         </div>
-                        <div class="modify" onclick="deleteDetails()">
+                        <div class="modify" id="delete">
                             <img class="deleteSymbol" src="../media/delete2.png">
                             <a class="btn">DELETE</a>
                         </div>
@@ -54,7 +54,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><input type="text" id="newName" onchange="validateName()"><p class="error" id="nameError">&nbsp;</p></td><td class="rightSpace"></td>
+                            <td colspan="2"><input type="text" id="newName"><p class="error" id="nameError">&nbsp;</p></td><td class="rightSpace"></td>
                         </tr>
                         <tr>
                             <td>
@@ -62,7 +62,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><input type="text" id="newEmail" onchange="validateEmail()"><p class="error" id="emailError">&nbsp;</p></td>
+                            <td colspan="2"><input type="text" id="newEmail"><p class="error" id="emailError">&nbsp;</p></td>
                         </tr>
                         <tr>
                             <td>
@@ -73,8 +73,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><input type="text" id="newMobile" onchange="validateMobile()"><p class="error" id="mobileError">&nbsp;</p></td>
-                            <td><input type="text" id="newLandline" onchange="validateLandline()"><p class="error" id="landlineError">&nbsp;</p></td>
+                            <td><input type="text" id="newMobile"><p class="error" id="mobileError">&nbsp;</p></td>
+                            <td><input type="text" id="newLandline"><p class="error" id="landlineError">&nbsp;</p></td>
                         </tr>
                         <tr>
                             <td>
@@ -82,7 +82,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><input type="text" id="newWebsite" onchange="validateWebsite()"><p class="error" id="websiteError">&nbsp;</p></td>
+                            <td colspan="2"><input type="text" id="newWebsite"><p class="error" id="websiteError">&nbsp;</p></td>
                         </tr>
                         <tr>
                             <td>
@@ -90,13 +90,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><textarea type="text" class="address" id="newAddress" onchange="validateAddress()"></textarea><p class="error" id="addressError">&nbsp;</p></td>
+                            <td colspan="2"><textarea type="text" class="address" id="newAddress"></textarea><p class="error" id="addressError">&nbsp;</p></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
                             <td class="rightSpace">
-                                <input type="button" id="createButton" class="addbtn" value="Add" onclick="createContact()">
+                                <input type="button" id="createButton" class="addbtn" value="Add">
                             </td>
                         </tr>
                     </form>

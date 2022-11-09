@@ -1,3 +1,14 @@
+$(function(){
+    $('#add').click(function(){openForm();});
+    $('#edit').click(function(){editDetails();});
+    $('#delete').click(function(){deleteDetails();});
+    $('#newName').keyup(function(){validateName();});
+    $('#newEmail').keyup(function(){validateEmail();});
+    $('#newMobile').keyup(function(){validateMobile();});
+    $('#newLandline').keyup(function(){validateLandline();});
+    $('#newWebsite').keyup(function(){validateWebsite();});
+    $('#newAddress').keyup(function(){validateAddress();});
+});
 class Contact{
     constructor(name,email,mobile,landline,website,address){
         this.name=name;
@@ -75,17 +86,27 @@ function openForm(){
     $('#newLandline').val("");
     $('#newWebsite').val("");
     $('#newAddress').val("");
+    removeError();
     $('#addDetails').css({display:"block"});
     $('.contactInfo').css({display:"none"});
     $('#createButton').val('Add');
+    $('#createButton').removeAttr('onclick');
     $('#createButton').attr('onclick','createContact()');
     for(let j in list){
         $("#"+variable+j).removeClass("active");
     }
 }
+function removeError(){
+    $('#nameError').html("&nbsp;");
+    $('#emailError').html("&nbsp;");
+    $('#mobileError').html("&nbsp;");
+    $('#landlineError').html("&nbsp;");
+    $('#websiteError').html("&nbsp;");
+    $('#addressError').html("&nbsp;");
+}
 function createContact(){
     if(validateForm()){
-        if(confirm("Are you sure you want to new contact details")){
+        if(confirm("Are you sure you want to add new contact details")){
             var name = $('#newName').val();
             var email = $('#newEmail').val();
             var mobile = $('#newMobile').val();
@@ -101,9 +122,11 @@ function createContact(){
     }
 }
 function editDetails(){
+    removeError();
     $('#addDetails').css({display:"block"});
     $('.contactInfo').css({display:"none"});
     $('#createButton').val('Edit');
+    $('#createButton').removeAttr('onclick');
     $('#createButton').attr('onclick','editContact()');
     $('#newName').val($('#detailedName').text());
     $('#newEmail').val($('#detailedEmail').text());
