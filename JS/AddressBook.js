@@ -182,27 +182,27 @@ function validate(input,regex,type){
 function validateName(){
     let name = $('#newName').val();
     const validname =/^[a-zA-Z\s]{4,256}$/;
-    validate(name,validname,"name");
+    return validate(name,validname,"name");
 }
 function validateEmail(){
     let email = $("#newEmail").val();
     const mail = /^[a-zA-Z0-9.$_*]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.]{2,}$/;
-    validate(email,mail,"email");
+    return validate(email,mail,"email");
 }
 function validateMobile(){
     let mobile = $('#newMobile').val();
     const valid =/^[\+]+[0-9]{2,3}[\s]?[0-9]{3}[\s]?[0-9]{5,7}$/;
-    validate(mobile,valid,"mobile");
+    return validate(mobile,valid,"mobile");
 }
 function validateLandline(){
     let landline = $('#newLandline').val();
     const valid =/^[0][0-9]{2,3}[\s]?[0-9]{3,4}[\s]?[0-9]{4}$/;
-    validate(landline,valid,"landline");
+    return validate(landline,valid,"landline");
 }
 function validateWebsite(){
     let website = $('#newWebsite').val();
     const valid =/^(http(s)?:\/\/)?((www.)?)+[a-zA-Z0-9#!:?+=&%!.\-\/]+\.[a-zA-Z\/]{2,}$/;
-    validate(website,valid,"website");
+    return validate(website,valid,"website");
 }
 function validateAddress(){
     let address = $('#newAddress').val();
