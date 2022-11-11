@@ -1,5 +1,15 @@
 $(function(){
-    $('#add').click(function(){openForm();});
+    $('#home').click(function(){
+        $('#home').addClass('activePage');
+        $('#add').removeClass('activePage');
+        $('.contactInfo').hide();
+        $('#addDetails').hide();
+    });
+    $('#add').click(function(){
+        $('#add').addClass('activePage');
+        $('#home').removeClass('activePage');
+        openForm();
+    });
     $('#edit').click(function(){editDetails();});
     $('#delete').click(function(){deleteDetails();});
     $('#newName').keyup(function(){validateName();});
@@ -43,6 +53,8 @@ function displaySummary(contact,i){
     $("#summary div").last().html("<h1 class='Name'>"+contact.name+"</h1><p class='Mail'>"+contact.email+"</p><p class='Mobile'>"+contact.mobile+"</p>");
 }
 function displayDetails(id){
+    $('#home').addClass('activePage');
+    $('#add').removeClass('activePage');
     $("#"+id).addClass("active");
     $('.contactInfo').css({display:"block"});
     $('#addDetails').css({display:"none"});
@@ -151,95 +163,46 @@ function editContact(){
         }
     }
 }
-function validateName(){
-    let name = $('#newName').val();
-    const validname =/^[a-zA-Z\s]{4,256}$/;
-    if(require(name)){
-        if(validname.test(name)){
-            $('#nameError').html("&nbsp;");
+function validate(input,regex,type){
+    if(require(input)){
+        if(regex.test(input)){
+            $('#'+type+"Error").html("&nbsp;");
             return true;
         }
         else{
-            $('#nameError').html("Enter valid Name");
+            $('#'+type+"Error").html("Enter valid "+type);
             return false;
         }
     }
     else{
-        $('#nameError').html("Name is required");
+        $('#'+type+"Error").html(type+" is required");
         return false;
     }
+}
+function validateName(){
+    let name = $('#newName').val();
+    const validname =/^[a-zA-Z\s]{4,256}$/;
+    validate(name,validname,"name");
 }
 function validateEmail(){
     let email = $("#newEmail").val();
     const mail = /^[a-zA-Z0-9.$_*]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.]{2,}$/;
-    if(require(email)){
-        if(mail.test(email)){
-            $('#emailError').html("&nbsp;");
-            return true;
-        }
-        else{
-            $('#emailError').html("Enter valid Email");
-            return false;
-        }
-    }
-    else{
-        $("#emailError").html("Please enter Email");
-        return false;
-    }
+    validate(email,mail,"email");
 }
 function validateMobile(){
     let mobile = $('#newMobile').val();
     const valid =/^[\+]+[0-9]{2,3}[\s]?[0-9]{3}[\s]?[0-9]{5,7}$/;
-    if(require(mobile)){
-        if(valid.test(mobile)){
-            $('#mobileError').html("&nbsp;");
-            return true;
-        }
-        else{
-            $('#mobileError').html("Enter valid Mobile Number");
-            return false;
-        }
-    }
-    else{
-        $('#mobileError').html("Mobile Number is required");
-        return false;
-    }
+    validate(mobile,valid,"mobile");
 }
 function validateLandline(){
     let landline = $('#newLandline').val();
     const valid =/^[0][0-9]{2,3}[\s]?[0-9]{3,4}[\s]?[0-9]{4}$/;
-    if(require(landline)){
-        if(valid.test(landline)){
-            $('#landlineError').html("&nbsp;");
-            return true;
-        }
-        else{
-            $('#landlineError').html("Enter valid Telephone Number");
-            return false;
-        }
-    }
-    else{
-        $('#landlineError').html("Telephone Number is required");
-        return false;
-    }
+    validate(landline,valid,"landline");
 }
 function validateWebsite(){
     let website = $('#newWebsite').val();
     const valid =/^(http(s)?:\/\/)?((www.)?)+[a-zA-Z0-9#!:?+=&%!.\-\/]+\.[a-zA-Z\/]{2,}$/;
-    if(require(website)){
-        if(valid.test(website)){
-            $('#websiteError').html("&nbsp;");
-            return true;
-        }
-        else{
-            $('#websiteError').html("Enter valid Website");
-            return false;
-        }
-    }
-    else{
-        $('#websiteError').html("Website is required");
-        return false;
-    }
+    validate(website,valid,"website");
 }
 function validateAddress(){
     let address = $('#newAddress').val();
